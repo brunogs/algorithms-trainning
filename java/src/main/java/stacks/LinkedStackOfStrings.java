@@ -1,13 +1,10 @@
 package stacks;
 
+import common.Node;
+
 public class LinkedStackOfStrings {
 
     private Node first = null;
-
-    private class Node {
-        String item;
-        Node next;
-    }
 
     public boolean isEmpty() {
         return first == null;
