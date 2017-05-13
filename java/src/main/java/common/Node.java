@@ -1,7 +1,7 @@
 package common;
 
 
-public class Node {
-    public String item;
-    public Node next;
+public class Node<T> {
+    public T item;
+    public Node<T> next;
 }

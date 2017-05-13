@@ -2,23 +2,23 @@ package stacks;
 
 import common.Node;
 
-public class LinkedStackOfStrings {
+public class LinkedStack<Item> {
 
-    private Node first = null;
+    private Node<Item> first = null;
 
     public boolean isEmpty() {
         return first == null;
     }
 
-    public void push(String item) {
-        Node oldFirst = first;
-        first = new Node();
+    public void push(Item item) {
+        Node<Item> oldFirst = first;
+        first = new Node<>();
         first.item = item;
         first.next = oldFirst;
     }
 
-    public String pop() {
-        String item = first.item;
+    public Item pop() {
+        Item item = first.item;
         first = first.next;
         return item;
     }

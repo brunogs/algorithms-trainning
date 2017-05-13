@@ -1,13 +1,15 @@
 package queue;
 
-public class ResizingArrayQueueOfStrings {
+import static common.ArrayGeneric.newTypedArray;
+
+public class ResizingArrayQueue<Item> {
 
     private int head = 0;
     private int tail = 1;
-    private String[] q;
+    private Item[] q;
 
-    public ResizingArrayQueueOfStrings() {
-        q = new String[2];
+    public ResizingArrayQueue() {
+        q = newTypedArray(2);
     }
 
     public int size() {
@@ -18,7 +20,7 @@ public class ResizingArrayQueueOfStrings {
         return q[head] == null;
     }
 
-    public void enqueue(String item) {
+    public void enqueue(Item item) {
         if (isEmpty()) {
             q[head] = item;
         } else {
@@ -29,8 +31,8 @@ public class ResizingArrayQueueOfStrings {
         }
     }
 
-    public String dequeue() {
-        String headItem = q[head];
+    public Item dequeue() {
+        Item headItem = q[head];
         q[head] = null;
         head++;
         if (head > 1 && head == q.length/4) {
@@ -40,7 +42,7 @@ public class ResizingArrayQueueOfStrings {
     }
 
     private void resize(int capacity) {
-        String[] copy = new String[capacity];
+        Item[] copy = newTypedArray(capacity);
         int copyIndex = 0;
         for (int i = head; i < tail; i++) {
             copy[copyIndex] = q[i];

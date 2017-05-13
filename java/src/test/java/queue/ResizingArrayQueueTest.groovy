@@ -1,22 +1,31 @@
 package queue
 
 import spock.lang.Specification
-import stacks.ResizingArrayStackOfStrings
 
-class ResizingArrayQueueOfStringsTest extends Specification {
+class ResizingArrayQueueTest extends Specification {
 
     def "should enqueue item"() {
         given:
-            def queueOfStrings = new ResizingArrayQueueOfStrings()
+            def queueOfStrings = new ResizingArrayQueue()
         when:
             queueOfStrings.enqueue("item1")
         then:
             !queueOfStrings.empty
     }
 
+    def "should work with anothers types item"() {
+        given:
+            def queueOfStrings = new ResizingArrayQueue()
+        when:
+            queueOfStrings.enqueue(1)
+            queueOfStrings.enqueue("abc")
+        then:
+            !queueOfStrings.empty
+    }
+
     def "should dequeue queue"() {
         given:
-            def queueOfStrings = new ResizingArrayQueueOfStrings()
+            def queueOfStrings = new ResizingArrayQueue()
             queueOfStrings.enqueue("item1")
             queueOfStrings.enqueue("item2")
             queueOfStrings.enqueue("item3")
@@ -28,7 +37,7 @@ class ResizingArrayQueueOfStringsTest extends Specification {
 
     def "should resize the queue"() {
         given:
-            def queueOfStrings = new ResizingArrayQueueOfStrings()
+            def queueOfStrings = new ResizingArrayQueue()
         when:
             queueOfStrings.enqueue("item1")
             queueOfStrings.enqueue("item2")
@@ -40,7 +49,7 @@ class ResizingArrayQueueOfStringsTest extends Specification {
 
     def "should shring the queue"() {
         given:
-            def queueOfStrings = new ResizingArrayQueueOfStrings()
+            def queueOfStrings = new ResizingArrayQueue()
             queueOfStrings.enqueue("item1")
             queueOfStrings.enqueue("item2")
             queueOfStrings.enqueue("item3")

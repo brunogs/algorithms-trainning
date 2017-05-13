@@ -3,19 +3,18 @@ package stacks
 import spock.lang.Specification
 
 
-class LinkedStackOfStringsTest extends Specification {
-
+class FixedCapacityStackTest extends Specification {
 
     def "excpect an empty stack"() {
         given:
-            def stackOfStrings = new LinkedStackOfStrings()
+            def stackOfStrings = new FixedCapacityStack(10)
         expect:
             stackOfStrings.empty
     }
 
     def "should be able to push itens in stack"() {
         given:
-            def stackOfStrings = new LinkedStackOfStrings()
+            def stackOfStrings = new FixedCapacityStack(10)
         when:
             stackOfStrings.push("item1")
         then:
@@ -24,7 +23,7 @@ class LinkedStackOfStringsTest extends Specification {
 
     def "should be able to pop itens in stack"() {
         given:
-            def stackOfStrings = new LinkedStackOfStrings()
+            def stackOfStrings = new FixedCapacityStack(10)
             stackOfStrings.push("item1")
             stackOfStrings.push("item2")
             stackOfStrings.push("item3")
@@ -34,4 +33,16 @@ class LinkedStackOfStringsTest extends Specification {
             removedItem == "item3"
             stackOfStrings.pop() == "item2"
     }
+
+    def "should fail when there is no capacity"() {
+        given:
+            def stackOfStrings = new FixedCapacityStack(2)
+        when:
+            stackOfStrings.push("item1")
+            stackOfStrings.push("item2")
+            stackOfStrings.push("item3")
+        then:
+            thrown ArrayIndexOutOfBoundsException
+    }
+
 }

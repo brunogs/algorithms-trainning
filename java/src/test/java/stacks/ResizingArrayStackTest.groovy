@@ -3,18 +3,18 @@ package stacks
 import spock.lang.Specification
 
 
-class ResizingArrayStackOfStringsTest extends Specification {
+class ResizingArrayStackTest extends Specification {
 
     def "excpect an empty stack"() {
         given:
-            def stackOfStrings = new ResizingArrayStackOfStrings()
+            def stackOfStrings = new ResizingArrayStack()
         expect:
             stackOfStrings.empty
     }
 
     def "should be able to push itens in stack"() {
         given:
-            def stackOfStrings = new ResizingArrayStackOfStrings()
+            def stackOfStrings = new ResizingArrayStack()
         when:
             stackOfStrings.push("item1")
         then:
@@ -23,7 +23,7 @@ class ResizingArrayStackOfStringsTest extends Specification {
 
     def "should be able to pop itens in stack"() {
         given:
-            def stackOfStrings = new ResizingArrayStackOfStrings()
+            def stackOfStrings = new ResizingArrayStack()
             stackOfStrings.push("item1")
             stackOfStrings.push("item2")
             stackOfStrings.push("item3")
@@ -36,7 +36,7 @@ class ResizingArrayStackOfStringsTest extends Specification {
 
     def "should resize the stack"() {
         given:
-            def stackOfStrings = new ResizingArrayStackOfStrings()
+            def stackOfStrings = new ResizingArrayStack()
         when:
             stackOfStrings.push("item1")
             stackOfStrings.push("item2")
@@ -48,7 +48,7 @@ class ResizingArrayStackOfStringsTest extends Specification {
 
     def "should shring the stack"() {
         given:
-            def stackOfStrings = new ResizingArrayStackOfStrings()
+            def stackOfStrings = new ResizingArrayStack()
             stackOfStrings.push("item1")
             stackOfStrings.push("item2")
             stackOfStrings.push("item3")
