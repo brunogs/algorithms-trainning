@@ -29,10 +29,14 @@ public class ResizingArrayStackOfStrings {
         return item;
     }
 
+    public int size() {
+        return s.length;
+    }
+
     private void resize(int capacity) {
         String[] copy = new String[capacity];
         for (int i = 0; i < N; i++) {
-            copy[i] = s[1];
+            copy[i] = s[i];
         }
         s = copy;
     }
