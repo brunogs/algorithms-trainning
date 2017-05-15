@@ -2,9 +2,16 @@
 
 # Notes
 
-## Stacks and queues
+# Stacks and queues
+
+## Stack
 
 **Amortized analysis**: Average running time per operation over a worst-case sequence of operations.
+
+Stack example (Dijkstra's two-stack algorithm):
+( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )
+can be solved with two stack. One to values another to operators.
+
 
 ### Linked-list implementations.
 * Every operations takes constant time in the worst case.
@@ -13,6 +20,38 @@
 ### Resizing-array implementation.
 * Every operation takes constant amortized time.
 * Less wasted space.
+
+## Bag
+* Adding items to a collection and iterating (when order doesn't matter)
+
+
+# Analysis of Algorithms
+
+Predict performance
+Compare algoriths
+Provide guarantees
+
+### Scientific method.
+* **Observe** some feature of natural world.
+* **Hypothesize** a model that is consistent with the observations
+* **Predict** events using the hypothesis
+* **Verify** the predictions by making further obervations
+* **Validate** by repeating until the hypothesis and observations agree
+
+### Principles
+* Experiments must be **reproducible**
+* Hypotheses mus be **falsifiable**
+
+## Observations
+
+* **Standart plot.** Plot running time T(N) vs. input size N.
+* **Log-log plot.** Plot running time T(N) vs. input size N using log-log scale.
+```
+lg(T(N)) = b lg N + c
+b = 2.999
+c = -33.2103
+T(N) = aN<sup>b</sup>, where a = 2<sup>c</sup>
+```
 
 
 
