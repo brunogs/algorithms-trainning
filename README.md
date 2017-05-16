@@ -55,18 +55,18 @@ T(N) = aN<sup>b</sup>, where a = 2<sup>c</sup>
 
 ## Order of growth
 
-log _N_, _N_, _N_log _N_, _N_<sup>2</sup>, N<sup>3</sup>, and 2<sup>n</sup>
+log _N_, _N_, _N_ log _N_, _N_<sup>2</sup>, N<sup>3</sup>, and 2<sup>n</sup>
 
 
-| Order of growth| name          | example code                                          |
-|:--------------:|:-------------:|:-----------------------------------------------------:|
-| 1              | constant      | a = b + c                                             |
-| log N          | logarithmic   |  ``` while (N > 1) ```</br>``` {   N = N / 2; ...}``` |
-| N              | linear        | ```for (int i = 0; i < N; i++) ```</br>``` { ... } ```|
-| N log N        | linearithmic  |  [mergesort]                                          |
-| N<sup>2</sup>  | quadratic     |```for (int i = 0;...)```</br>  ```for(int j = 0;...)```|
-| N<sup>3</sup>  | cubic         |```for (int i = 0;...)```</br>  ```for(int j = 0;...)```</br>    ```for(int k = 0;...)```|
-| 2<sup>N</sup>  | exponential   | combinatorial                                                                           |
+| Order of growth| name          | example code                                                                            | description| example      |
+|:--------------:|:-------------:|:---------------------------------------------------------------------------------------:|:--------------:|:--------------:| 
+| 1              | constant      | a = b + c                                                                               | statement     | add two numbers     |
+| log N          | logarithmic   |  ``` while (N > 1) ```</br>``` {   N = N / 2; ...}```                                   | divide in half| binary search       |
+| N              | linear        | ```for (int i = 0; i < N; i++) ```</br>``` { ... } ```                                  |  loop          | find the maximum    | 
+| N log N        | linearithmic  |  [mergesort]                                                                            | divide and conquer | mergesort |
+| N<sup>2</sup>  | quadratic     |```for (int i = 0;...)```</br>```  for(int j = 0;...)```                                 | double loop | check all pairs |
+| N<sup>3</sup>  | cubic         |```for (int i = 0;...)```</br>```  for(int j = 0;...)```</br>```    for(int k = 0;...)```| triple loop | check all triples |
+| 2<sup>N</sup>  | exponential   | combinatorial                                                                           | exhaustive search | check all subsets |
 
 
 
