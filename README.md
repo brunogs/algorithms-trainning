@@ -53,5 +53,22 @@ c = -33.2103
 T(N) = aN<sup>b</sup>, where a = 2<sup>c</sup>
 ```
 
+## Order of growth
+
+log _N_, _N_, _N_log _N_, _N_<sup>2</sup>, N<sup>3</sup>, and 2<sup>n</sup>
+
+
+| Order of growth| name          | example code                                          |
+|:--------------:|:-------------:|:-----------------------------------------------------:|
+| 1              | constant      | a = b + c                                             |
+| log N          | logarithmic   |  ``` while (N > 1) ```</br>``` {   N = N / 2; ...}``` |
+| N              | linear        | ```for (int i = 0; i < N; i++) ```</br>``` { ... } ```|
+| N log N        | linearithmic  |  [mergesort]                                          |
+| N<sup>2</sup>  | quadratic     |```for (int i = 0;...)```</br>  ```for(int j = 0;...)```|
+| N<sup>3</sup>  | cubic         |```for (int i = 0;...)```</br>  ```for(int j = 0;...)```</br>    ```for(int k = 0;...)```|
+| 2<sup>N</sup>  | exponential   | combinatorial                                                                           |
+
+
+
 
 
