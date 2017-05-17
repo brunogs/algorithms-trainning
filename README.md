@@ -46,12 +46,12 @@ Provide guarantees
 
 * **Standart plot.** Plot running time T(N) vs. input size N.
 * **Log-log plot.** Plot running time T(N) vs. input size N using log-log scale.
-```
-lg(T(N)) = b lg N + c
-b = 2.999
-c = -33.2103
-T(N) = aN<sup>b</sup>, where a = 2<sup>c</sup>
-```
+
+lg(T(N)) = b lg N + c </br>
+b = 2.999             </br>
+c = -33.2103          </br>
+T(N) = aN<sup>b</sup>, where a = 2<sup>c</sup> </br>
+
 
 ## Order of growth
 
