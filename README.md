@@ -69,6 +69,14 @@ log _N_, _N_, _N_ log _N_, _N_<sup>2</sup>, N<sup>3</sup>, and 2<sup>n</sup>
 | 2<sup>N</sup>  | exponential   | combinatorial                                                                           | exhaustive search | check all subsets |
 
 
+### Weighted quick-union
+
+[Hopcroft-Ulman, Tarjan] Starting from an empty data structure,
+any sequence of M union-find ops on N objects makes <= c( N + M lg<sup>*</sup> N) array accesses.
+* Analysis can be improved to N + M a(M,N).
+* Simple algorithm with fascinating mathematics.
+
+Percolation
 
 
 
