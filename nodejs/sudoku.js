@@ -46,6 +46,7 @@ const board =
 var isValidSudokuWithDimensions = function (board, startRow, maxRow, startCol, maxCol, checkBlock) {
         let numbersOfTheCol = new Map()
         let blockNumbers = new Set()
+        console.log(`starting blow row: ${startRow} - ${maxRow}, col: ${startCol} - ${maxCol} ${checkBlock}`)
         for (let row = startRow; row < maxRow; row++) {
                 let numbersOfTheRow = new Set()
 
@@ -65,10 +66,13 @@ var isValidSudokuWithDimensions = function (board, startRow, maxRow, startCol, m
                                 }
                         }
 
-                        if (row > 0 && col > 0 && (row % 3) === 0 && (col % 3) === 0) {
+                        if (!checkBlock) {
+                            console.log(`Will check block: ${row + 1} x ${col + 1} = ${(row + 1) % 3 === 0 && (col + 1) % 3 === 0}`)
+                            if (row > 0 && col > 0 && (row + 1) % 3 === 0 && (col + 1 ) % 3 === 0) {
                                 console.log(`Dimension row: ${row - 3} - ${row}, col: ${col - 3} - ${col}`)
-                                if (!isValidSudokuWithDimensions(board, (row - 3), row - 1, (col - 3), col - 1, true))
-                                        return false
+                                if (!isValidSudokuWithDimensions(board, (row - 2), row + 1, (col - 2), col + 1, true))
+                                    return false
+                            }
                         }
                 }
 
