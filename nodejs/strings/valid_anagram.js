@@ -12,21 +12,17 @@ const s = "anagram", t = "nagaram"
 var isAnagram = function(s, t) {
     if (s.length !== t.length)
         return false
-    const firstCharCount = new Map
-    const secondCharCount = new Map
+    const charCount = new Map
     for (let i = 0; i < s.length; i++) {
         const char = s.charAt(i)
-        firstCharCount.set(char, (firstCharCount.get(char) || 0) + 1)
+        charCount.set(char, (charCount.get(char) || 0) + 1)
     }
     for (let i = 0; i < t.length; i++) {
         const char = t.charAt(i)
-        if (!firstCharCount.get(char))
+        const value = charCount.get(char)
+        if (!value)
             return false
-        secondCharCount.set(char, (secondCharCount.get(char) || 0) + 1)
-    }
-    for (const [key, value] of firstCharCount) {
-        if (value !== secondCharCount.get(key))
-            return false
+        charCount.set(char, value - 1)
     }
     return true
 };
