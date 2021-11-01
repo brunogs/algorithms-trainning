@@ -1,6 +1,7 @@
-const haystack = "hello", needle = "ll"
+// const haystack = "hello", needle = "ll"
 // const haystack = "aaaaa", needle = "bba"
 // const haystack = "", needle = ""
+const haystack = "mississippi", needle = "issi"
 
 /**
  * @param {string} haystack
@@ -12,10 +13,11 @@ var strStr = function(haystack, needle) {
         return 0
 
     let window = haystack.substr(0, needle.length)
-    for (let i = 0; i < haystack.length - needle.length; i++) {
+    for (let i = 0; i <= haystack.length - needle.length; i++) {
+        console.log(`comparting ${window} with ${needle} index=${i}`)
         if (window === needle) return i
         else {
-            window = haystack.substr(i + i, needle.length)
+            window = haystack.substr(i + 1, needle.length)
         }
     }
     return -1
