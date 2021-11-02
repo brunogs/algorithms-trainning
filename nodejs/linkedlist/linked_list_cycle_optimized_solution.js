@@ -9,6 +9,8 @@ const tail = new ListNode(2, new ListNode(0, new ListNode(-4, head)))
 head.next = tail
 
 /**
+ * Using two pointers (slow and fast) the memory complexity stay in O(1)
+ *
  * @param {ListNode} head
  * @return {boolean}
  */
