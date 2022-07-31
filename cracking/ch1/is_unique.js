@@ -1,3 +1,5 @@
+
+// using an extra data structure
 function isUniqueMap(text) {
     const unique = new Map()
     for (let i = 0; i < text.length; i++) {
@@ -9,6 +11,7 @@ function isUniqueMap(text) {
     return true
 }
 
+// using only the original string
 function isUnique(text) {
     for (let i = 0; i < text.length; i++) {
         for (let j = 0; j < text.length; j++) {
@@ -23,4 +26,4 @@ function isUnique(text) {
     return true
 }
 
-console.log(isUnique("daniela"))
+console.log(isUnique("aline"))
