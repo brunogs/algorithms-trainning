@@ -14,4 +14,4 @@ function isPermutation(textA, textB) {
     return true
 }
 
-console.log(isPermutation("Hello World", "Hello World"))
+console.log(isPermutation("Hello World", "World Hello"))
