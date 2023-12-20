@@ -4,22 +4,16 @@ import "fmt"
 
 func BinarySearchRecursive(array []int, target, left, right int) int {
 	// Write your code here.
-	if array[left] == target {
-		return left
-	}
-	if array[right] == target {
-		return right
-	}
-	if left >= right-1 {
+	if left > right {
 		return -1
 	}
 	half := (left + right) / 2
 	if array[half] == target {
 		return half
 	} else if target > array[half] {
-		return BinarySearchRecursive(array, target, half, right)
+		return BinarySearchRecursive(array, target, half+1, right)
 	} else if target < array[half] {
-		return BinarySearchRecursive(array, target, left, half)
+		return BinarySearchRecursive(array, target, left, half-1)
 	}
 	return -1
 }

@@ -8,24 +8,15 @@ func BinarySearch(array []int, target int) int {
 	start = 0
 	end = len(array) - 1
 
-	fmt.Println(array, target)
-	for start < end-1 {
+	for start <= end {
 		half := (start + end) / 2
-
-		if array[start] == target {
-			return start
-		}
-
-		if array[end] == target {
-			return end
-		}
-
+		fmt.Println(start, end, half)
 		if array[half] == target {
 			return half
 		} else if target > array[half] {
-			start = half
+			start = half + 1
 		} else {
-			end = half
+			end = half - 1
 		}
 	}
 	return -1
